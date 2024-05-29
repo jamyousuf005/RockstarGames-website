@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <title>Rockstar-games</title>
+
+     <style>
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+          }
+
+          body {
+               font-family: 'Poppins', sans-serif;
+               background-color: #0b0b0b;
+          }
+
+          :root {
+               --primary-text-color: #f9fffa;
+               --background-color: #000000;
+               --orange-color: #fcaf17;
+               --inline-padding: 80px;
+               --inline-text-padding: 35px;
+               --no-padding: 5px;
+          }
+
+          .no-padding {
+               padding: var(--no-padding);
+          }
+
+          .flex {
+               display: flex;
+          }
+
+          .last-container {
+               padding: var(--inline-padding);
+               background-color: var(--background-color);
+          }
+
+          .container {
+               padding: var(--inline-padding);
+               width: 100%;
+               overflow: hidden;
+          }
+
+          .text-container {
+               padding: var(--inline-text-padding);
+               width: 100%;
+          }
+
+          nav {
+               background-color: var(--background-color);
+               display: flex;
+               padding: 0rem 3rem 0rem 3rem;
+               align-items: center;
+               text-align: center;
+               height: 12vh;
+               border: 1px solid #ffffff2b;
+
+          }
+
+          a {
+               text-decoration: none;
+               color: var(--primary-text-color);
+               padding: 5px;
+               margin: 5px;
+               font-size: medium;
+          }
+
+          .logo {
+               justify-content: baseline;
+               align-items: center;
+          }
+
+
+          .nav-links {
+               height: 12vh;
+               gap: 12px;
+               align-items: center;
+               padding-left: 12px;
+
+          }
+
+          .nav-bar {
+               width: 100%;
+               align-items: center;
+               justify-content: space-between;
+               position: relative;
+               overflow: hidden;
+          }
+
+          .signin-btn {
+               align-items: center;
+               max-width: 100%;
+          }
+
+          .button {
+               padding: 10px 12px;
+               font-size: 14px;
+               font-weight: bold;
+               text-transform: uppercase;
+               background-color: var(--orange-color);
+               border: none;
+               border-radius: 4px;
+               cursor: pointer;
+          }
+
+          .button-new {
+               display: none;
+          }
+
+          .btn-li {
+               display: none;
+          }
+
+          .btn2 {
+               margin-top: 1.2rem;
+               width: 20vw;
+               height: 9vh;
+               font-size: 14px;
+               font-weight: bold;
+               text-transform: uppercase;
+               cursor: pointer;
+               border: none;
+               font-size: larger;
+               border-radius: 4px;
+               background-color: black;
+               color: var(--primary-text-color);
+               border: 1px solid var(--primary-text-color);
+          }
+
+          .btn2:hover {
+               background-color: var(--orange-color);
+               color: var(--background-color);
+               transition: 0.5s;
+          }
+
+          .icon {
+               height: 15px;
+          }
+
+          .nav-links li {
+               padding: 5px;
+               height: 12vh;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+          }
+
+          .nav-links li:hover {
+               transition: 0.3s;
+               border-bottom: 3px solid white;
+          }
+
+          .right-portion {
+               color: var(--primary-text-color);
+               max-width: 60vw;
+          }
+
+          .right-portion {
+
+               margin-left: 2rem;
+               font-weight: bold;
+               margin-top: 6rem;
+               flex-direction: column;
+               gap: 8px;
+               align-items: left;
+          }
+
+          .hero-section {
+               position: relative;
+          }
+
+          .right-portion p {
+               margin-top: 1rem;
+          }
+
+          .right-portion h1 {
+               margin-top: 1rem;
+          }
+
+          .left-portion {
+               width: 75vw;
+          }
+
+          .left-portion img {
+               width: 100%;
+               position: relative;
+          }
+
+          .center {
+               margin-top: 1.5rem;
+               color: var(--primary-text-color);
+               display: flex;
+
+               flex-direction: column;
+               overflow: visible;
+          }
+
+          .image-box {
+               width: 100%;
+               border-radius: 3px;
+          }
+
+
+          .image-box img {
+               object-fit: cover;
+               width: 100%;
+               border-top-left-radius: 8px;
+               border-top-right-radius: 8px;
+               height: 100%;
+
+          }
+
+          .six-boxes {
+
+               margin-top: 1rem;
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr;
+               gap: 1.5rem;
+               width: 100%;
+          }
+
+          .box {
+               border-radius: 10px;
+               width: 100%;
+               border: 1px solid #ffffff2b;
+
+          }
+
+          .box-text {
+               font-weight: bold;
+          }
+
+          .text2 {
+               display: flex;
+               align-items: start;
+               flex-direction: column;
+               justify-content: center;
+          }
+
+          .text {
+               color: var(--primary-text-color);
+          }
+
+          .big-text {
+               margin-top: 1rem;
+               font-size: x-large;
+          }
+
+          .blank-space {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+
+          .viewmore-btn {
+               padding: 8px 13px;
+               font-size: bold;
+               font-size: large;
+               border: none;
+               border-bottom: 4px solid var(--orange-color);
+               border-radius: 3px;
+               background-color: var(--background-color);
+               color: var(--primary-text-color);
+
+          }
+
+          .viewmore-btn:hover {
+               background-color: var(--orange-color);
+               color: var(--background-color);
+               transition: 0.7s;
+               font-size: bold;
+               font-size: large;
+          }
+
+          .big-image {
+               margin-top: 1rem;
+               height: auto;
+               position: relative;
+               width: 100%;
+          }
+
+          .new-image {
+               display: none;
+          }
+
+          .bigimg-before {
+               height: auto;
+               object-fit: cover;
+               width: 100%;
+               height: 100%;
+               border-radius: 8px;
+
+          }
+
+          .four-boxes {
+               margin-top: 1.5rem;
+               display: flex;
+               gap: 1.8rem;
+               width: 100%;
+
+          }
+
+          .bxs img {
+               object-fit: cover;
+               border-radius: 5px;
+               height: 100%;
+               width: 100%;
+          }
+
+          .big-image2 {}
+
+          .bxs {
+               height: 100%;
+               width: 100%;
+          }
+
+          .center-two img:hover {
+               cursor: pointer;
+               transform: scale(1.03);
+               transition: 0.5s;
+          }
+
+          .links-div {
+
+               display: block;
+          }
+
+          .links {
+               list-style: none;
+               display: flex;
+               gap: 8px;
+          }
+
+          .links li a:hover {
+               color: var(--orange-color);
+          }
+
+          .links li a {
+               font-size: large;
+          }
+
+          .last-container {
+               background-color: var(--background-color);
+               height: 100%;
+          }
+
+          .last-section {
+               color: var(--primary-text-color);
+          }
+
+          .user-logo {
+               display: none;
+          }
+
+          .nav-toggle {
+               display: none;
+          }
+
+          .first-portion {
+               display: flex;
+               font-size: large;
+               justify-content: space-between;
+          }
+
+          .list1 {
+               list-style: none;
+          }
+
+          .list1 li a:hover {
+               color: var(--orange-color);
+          }
+
+          .list1 li {
+               display: flex;
+          }
+
+          .list1 li a {
+               color: rgba(255, 255, 255, 0.353);
+          }
+
+          .list2 {
+               list-style: none;
+               display: flex;
+               gap: 8px;
+          }
+
+          .last-lists {
+               margin-top: 5rem;
+               display: flex;
+               justify-content: space-between;
+          }
+
+          .list3 {
+               margin-top: 8rem;
+               color: var(--primary-text-color);
+               justify-content: space-between;
+          }
+
+          .cities li {
+               list-style: none;
+          }
+
+          @media screen and (max-width:1191px) {
+               .nav-links {
+                    gap: 5px;
+                    padding-left: 5px;
+               }
+
+               .nav-links li {
+                    font-size: small;
+               }
+
+               .nav-bar {
+                    width: 100%;
+               }
+
+               .signin-btn {
+                    justify-content: right;
+               }
+
+               .left-portion {
+                    width: 100%;
+               }
+
+               .signin-btn {
+                    width: 30%;
+               }
+
+               .nav-links :nth-child(5) {
+                    display: none;
+               }
+
+               .nav-links :nth-child(6) {
+                    display: none;
+               }
+
+               .btn2 {
+                    width: 25vw;
+               }
+
+               i {
+                    font-size: small;
+               }
+
+               .hero-section {
+                    flex-direction: column;
+               }
+
+               .right-portion {
+                    margin: 0;
+                    max-width: 100%;
+                    flex-direction: row;
+                    padding: var(--inline-padding);
+                    justify-content: space-between;
+               }
+          }
+
+          @media screen and (max-width:1072px) {
+
+               :root {
+                    --inline-nav-padding: 5px;
+               }
+
+               .last-lists {
+                    flex-direction: column;
+               }
+
+               .list2 {
+                    margin-top: 4rem;
+               }
+
+               .signin-btn {
+                    width: 20%;
+               }
+
+               .signin-btn i {
+                    font-size: small;
+               }
+
+               .button {
+                    padding: 8px 10px;
+               }
+
+               .nav-links {
+                    width: 100%;
+                    flex-direction: column;
+                    background-color: #000000;
+                    height: 100%;
+                    width: 100%;
+                    font-size: small
+               }
+
+               .links-div {
+                    position: absolute;
+                    z-index: 3;
+                    opacity: 0.8;
+                    display: none;
+                    top: 200%;
+                    width: 100%;
+                    height: 75vh;
+               }
+
+               .links-div.active {
+                    display: block;
+               }
+
+               .left-portion {
+                    position: relative;
+               }
+
+               .container {
+                    overflow: initial;
+               }
+
+               .nav-bar {
+                    overflow: initial;
+               }
+
+               .nav i {
+                    font-size: larger;
+               }
+
+               .nav-toggle {
+                    display: block;
+               }
+
+               .user-logo {
+                    display: block;
+               }
+
+               .button-new {
+                    width: 45vw;
+                    padding: 10px 12px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    background-color: var(--orange-color);
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    display: block;
+
+               }
+
+               .signin-btn {
+                    display: none;
+               }
+
+          }
+
+          @media screen and (max-width:1025px) {
+               .six-boxes {
+                    grid-template-columns: 1fr 1fr;
+               }
+
+               .box {
+                    width: 100%;
+               }
+
+               .four-boxes {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+               }
+
+               .last-lists {
+                    flex-direction: column-reverse;
+               }
+
+               .last-section {
+                    margin-top: 1.5rem;
+               }
+
+               .list2 {
+                    margin-bottom: 4rem;
+               }
+
+               .right-portion {
+                    margin-top: 5rem;
+               }
+
+               .links-div {
+                    height: 65vh;
+               }
+          }
+
+          @media screen and (max-width:827px) {
+               .links {
+                    gap: 1.5rem;
+                    flex-direction: column;
+               }
+
+               .links-div {
+                    height: 55vh;
+               }
+          }
+
+          @media screen and (max-width:768px) {
+               :root {
+                    --inline-padding: 35px;
+               }
+
+               .right-portion {
+                    margin-top: 7rem;
+                    padding: var(--inline-text-padding);
+               }
+
+               .last-container {
+                    padding: var(--inline-text-padding);
+               }
+
+               .list3 {
+                    margin: 4rem;
+                    gap: 18px;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+               }
+
+               .links-div {
+                    height: 50vh;
+               }
+
+               .new-image {
+                    display: block;
+                    height: auto;
+                    object-fit: cover;
+                    width: 100%;
+                    border-radius: 8px;
+               }
+
+               .bigimg-before {
+                    display: none;
+               }
+
+               .btn2 {
+                    width: 40%;
+               }
+
+               .six-boxes {
+                    grid-template-columns: 1fr;
+               }
+          }
+
+          @media screen and (max-width:525px) {
+               .right-portion {
+                    margin-top: 1.5rem;
+                    display: flex;
+                    align-items: start;
+                    flex-direction: column;
+                    justify-content: center;
+               }
+
+               .text2 {
+                    display: flex;
+                    align-items: start;
+                    flex-direction: column;
+                    justify-content: center;
+               }
+
+               .list3 {
+                    gap: 18px;
+               }
+
+               .btn2 {
+                    width: 100%;
+               }
+
+               .nav-links {
+                    font-size: small;
+               }
+
+               .links-div {
+                    height: 40vh;
+               }
+          }
+
+
+          @media screen and (max-width:488px) {
+               .list3 {
+                    font-size: small;
+                    flex-wrap: nowrap;
+               }
+
+               .links-div {
+                    height: 40vh;
+               }
+          }
+
+          @media screen and (max-width:448px) {
+               .links-div {
+                    height: 40vh;
+               }
+
+               .right-portion {
+                    margin-top: 6rem;
+               }
+
+               .first-portion {
+                    flex-direction: column;
+                    gap: 1.5rem;
+               }
+
+               .list3 .cities {
+                    font-size: small;
+               }
+
+          }
+     </style>
+
+</head>
+
+<body>
+     <nav>
+          <div class="container">
+               <div class="nav-bar flex ">
+                    <div class="nav-toggle" id="nav-toggle">
+                         <a href="#"><i class="fa-solid fa-bars"></i></a>
+                    </div>
+                    <div class="logo">
+                         <a href="#"><img src="assets/00.svg" alt=""></a>
+                    </div>
+                    <div class="links-div active" id="links-div">
+                         <ul class="nav-links flex">
+                              <li><a href="#">Games <img src="assets/asset 0.svg" alt=""> </a></li>
+                              <li><a href="#">Newsire </a></li>
+                              <li><a href="#">Videos</a></li>
+                              <li><a href="#">Downloads</a></li>
+                              <li><a href="#">Store <img class="icon" src="assets/asset 24.svg" alt=""></a></li>
+                              <li><a href="#">Support <img class="icon" src="assets/asset 24.svg" alt=""></a></li>
+                              <li class="btn-li"><button class="button-new ">Get Launcher</button></li>
+                         </ul>
+                    </div>
+                    <div class="signin-btn flex">
+                         <button class="button">Get Launcher</button>
+                         <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                         <li><a href="#"><i class="fa-solid fa-user"></i> </a></li>
+                    </div>
+                    <div class="user-logo">
+                         <a href="#"><i class="fa-solid fa-user"></i></a>
+                    </div>
+               </div>
+          </div>
+     </nav>
+
+     <header>
+          <div class="hero-section flex">
+               <div class="left-portion">
+                    <img src="assets/realhero.jpg" alt="">
+               </div>
+
+
+               <div class="right-portion flex">
+                    <div class="text text2">
+                         <p>Grand Theft Auto VI</p>
+                         <h1>Trailer1</h1>
+                    </div>
+                    <button class="btn2">Watch Now</button>
+               </div>
+
+
+
+          </div>
+     </header>
+
+     <div class="container">
+          <div class="center">
+               <div class="text flex">
+                    <h1>NEWSIRE</h1>
+               </div>
+               <div class="six-boxes">
+                    <div class="box">
+                         <div class="image-box">
+                              <img src="assets/blackcar.jpg" alt="">
+                         </div>
+                         <div class="text-container">
+                              <div class="box-text">
+                                   <p>GTA ONLINE MAY 23,2024</p>
+                                   <div class="big-text">
+                                        Bask in Luxury with this Week's Dewbaushee showcase
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <div class="image-box">
+                              <img src="assets/asset 17.jpeg" alt="">
+                         </div>
+                         <div class="text-container">
+                              <div class="box-text">
+                                   <p>GTA ONLINE MAY 16,2024</p>
+                                   <div class="big-text">
+                                        Complete The Gangbanger Robbery and Claim the Übermacht Cypher.
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <div class="image-box">
+                              <img src="assets/asset 18.jpeg" alt="">
+                         </div>
+                         <div class="text-container">
+                              <div class="box-text">
+                                   <p>GTA ONLINE MAY 9,2024</p>
+                                   <div class="big-text">
+                                        Brave the High Seas in A Superyacht Life Missions for 2X GTA$ and XP
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <div class="image-box">
+                              <img src="assets/asset 19.jpeg" alt="">
+                         </div>
+                         <div class="text-container">
+                              <div class="box-text">
+                                   <p>GTA ONLINE MAY 2,2024</p>
+                                   <div class="big-text">
+                                        Accelerate Earnings with 3X GTA$ and RP on Open Wheel Races.
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <div class="image-box">
+                              <img src="assets/asset 20.jpeg" alt="">
+                         </div>
+                         <div class="text-container">
+                              <div class="box-text">
+                                   <p>GTA ONLINE MAY 2,2024</p>
+                                   <div class="big-text">
+                                        GTA+ Members Can Now Claim an Överflöd Entity MT Super Car and More.
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <div class="image-box">
+                              <img src="assets/asset 21.jpeg" alt="">
+                         </div>
+                         <div class="text-container">
+                              <div class="box-text">
+                                   <p>L.A.Noire MAY 1,2024</p>
+                                   <div class="big-text">
+                                        Play L.A. Noire Free With Your GTA+ Membership.
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+          <div class="text-container">
+               <div class="blank-space">
+                    <button class="viewmore-btn">View More</button>
+               </div>
+          </div>
+     </div>
+
+     <div class="container">
+          <div class="center-two">
+               <div class="text flex">
+                    <h1>Featured Games</h1>
+               </div>
+
+               <div class="big-image ">
+                    <img class="bigimg-before" src="assets/asset 23.png" alt="">
+                    <img class="new-image" src="assets/realhero.jpg" alt="">
+               </div>
+
+               <div class="four-boxes">
+                    <div class="bxs"><img src="assets/asset 2.jpeg" alt=""></div>
+                    <div class="bxs"><img src="assets/asset 3.jpeg" alt=""></div>
+                    <div class="bxs"><img src="assets/asset 5.jpeg" alt=""></div>
+                    <div class="bxs"><img src="assets/asset 6.jpeg" alt=""></div>
+               </div>
+               <div class="text-container">
+                    <div class="blank-space">
+                         <button class="viewmore-btn">View More</button>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div class="last-container">
+          <div class="last-section">
+               <div class="first-portion">
+                    <ul class="links">
+                         <li><a href="#">Contact</a></li>
+                         <li><a href="#">Careers</a></li>
+                         <li><a href="#">Community Guidelines</a></li>
+                         <li><a href="#">Subscribe</a></li>
+                    </ul>
+                    <div class="logo-text">
+                         <p><i class="fa-solid fa-globe"></i>Select a language <img src="assets/asset 0.svg" alt="">
+                         </p>
+                    </div>
+               </div>
+
+               <div class="last-lists">
+                    <ul class="list1">
+                         <li><a href="#">Corporate</a></li>
+                         <li><a href="#">Privacy</a></li>
+                         <li><a href="#">Cookie Settings</a></li>
+                         <li><a href="#">Cookie Policy</a></li>
+                         <li><a href="#">Legal</a></li>
+                         <li><a href="#">Do Not Shell My Personal Information</a></li>
+                    </ul>
+                    <ul class="list2">
+                         <li><a href="#"><img src="assets/asset 25.svg" alt=""></a></li>
+                         <li><a href="#"><img src="assets/asset 26.svg" alt=""></a></li>
+                         <li><a href="#"><img src="assets/asset 27.svg" alt=""></a></li>
+                         <li><a href="#"><img src="assets/asset 28.svg" alt=""></a></li>
+                         <li><a href="#"><img src="assets/asset 29.svg" alt=""></a></li>
+                    </ul>
+               </div>
+
+               <div class="list3 flex">
+
+                    <span>RockstarGames</span>
+
+                    <ul class="cities flex ">
+                         <li><a href="#"> NewYork</a></li>
+                         <li><a href="#">London</a> </li>
+                         <li><a href="#">Paris</a> </li>
+                         <li><a href="#">Bogota</a> </li>
+                    </ul>
+
+                    <span>MCMXCVIII</span>
+               </div>
+          </div>
+     </div>
+
+     <script>
+
+
+          const toggleButton = document.getElementById('nav-toggle');
+          const navLinks = document.getElementById('links-div');
+
+          toggleButton.addEventListener('click', () => {
+               navLinks.classList.toggle('active');
+          })
+
+     </script>
+</body>
+
+</html>
